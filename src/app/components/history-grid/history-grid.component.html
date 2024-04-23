@@ -1,0 +1,18 @@
+
+<div class="background-container">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <ejs-grid [dataSource]="taxHistoryData" class="custom-grid">
+          <e-columns>
+            <e-column field='TimeStamp' headerText='TimeStamp' textAlign='Right' width='20'></e-column>
+            <e-column field='Postal Code' headerText='Postal Code' width='20'></e-column>
+            <e-column field='Income' headerText='Income' textAlign='Right' format='C2' width='20'></e-column>
+            <e-column field='Tax' headerText='Tax' textAlign='Right'  width='20'></e-column>
+            <e-column field='Calculator' headerText='Calculator' textAlign='Right' format='yMd' width='20'></e-column>
+          </e-columns>
+        </ejs-grid>
+      </div>
+    </div>
+  </div>
+</div>
