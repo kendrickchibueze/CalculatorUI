@@ -2,16 +2,29 @@
 <div class="background-container">
   <div class="container mt-5">
     <div class="row justify-content-center">
-      <div class="col-md-4">
-        <ejs-grid [dataSource]="taxHistoryData" class="custom-grid">
+      <div class="col-md-8">
+        <ejs-grid #grid
+                  class="custom-grid"
+                  [dataSource]="taxHistoryData"
+                  [allowPaging]="true"
+                  [pageSettings]="pageSettings">
           <e-columns>
-            <e-column field='TimeStamp' headerText='TimeStamp' textAlign='Right' width='20'></e-column>
-            <e-column field='Postal Code' headerText='Postal Code' width='20'></e-column>
-            <e-column field='Income' headerText='Income' textAlign='Right' format='C2' width='20'></e-column>
-            <e-column field='Tax' headerText='Tax' textAlign='Right'  width='20'></e-column>
-            <e-column field='Calculator' headerText='Calculator' textAlign='Right' format='yMd' width='20'></e-column>
-          </e-columns>
+          <e-column field='TimeStamp' headerText='TimeStamp' textAlign='Right' width='120'></e-column>
+          <e-column field='Postal Code' headerText='Postal Code' width='100'></e-column>
+          <e-column field='Income' headerText='Income' textAlign='Right' format='C2' width='100'></e-column>
+          <e-column field='Tax' headerText='Tax' textAlign='Right'  width='80'></e-column>
+          <e-column field='Calculator' headerText='Calculator' textAlign='Right' format='yMd' width='120'></e-column>
+        </e-columns>
         </ejs-grid>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="centered-div">
+          <label>Enter page size:</label>
+          <ejs-textbox #textbox width="120"></ejs-textbox>
+          <button ejs-button (click)="updatePageSize()">Update</button>
+        </div>
       </div>
     </div>
   </div>
